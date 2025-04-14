@@ -8,6 +8,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 jobs:
   test:
@@ -41,7 +42,7 @@ jobs:
 
       # Subir los artefactos estáticos para GitHub Pages
       - name: Upload static site artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./  # Especifica la ruta de tu contenido estático (por ejemplo, el directorio con tu index.html)
 
