@@ -28,6 +28,10 @@ jobs:
 
       - name: Run unit tests
         run: pytest test_app.py
+      
+      - name: List files to be deployed
+        run: ls -la ./
+      
 
   deploy:
     needs: test
@@ -40,6 +44,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: List static files
+        run: ls -la ./  # Cambia esto si usas una carpeta distinta
+    
       # Subir los artefactos estáticos para GitHub Pages
       - name: Upload static site artifact
         uses: actions/upload-pages-artifact@v3
